@@ -8,11 +8,10 @@ fn main() -> Result<(), slint::PlatformError> {
     let ui = AppWindow::new()?;
 
     // Window must be shown first so sizes get calculated properly
+    // Don't know if there is a better way, slight redraw artifacting on move
     ui.show()?;
 
-    let window = ui.window();
-
-    center_window(window);
+    center_window(ui.window());
 
     ui.on_request_increase_value({
         let ui_handle = ui.as_weak();
