@@ -1,0 +1,45 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'slint-center-window'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=slint-center-window",
+                    "--package=slint-center-window"
+                ],
+                "filter": {
+                    "name": "slint-center-window",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'slint-center-window'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=slint-center-window",
+                    "--package=slint-center-window"
+                ],
+                "filter": {
+                    "name": "slint-center-window",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
