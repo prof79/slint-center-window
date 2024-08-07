@@ -12,8 +12,8 @@ pub fn center_window(window: &slint::Window) {
     if window.has_winit_window() {
 
         window.with_winit_window(|window: &Window| {
-            
-            match window.primary_monitor() {
+
+            match window.current_monitor() {
                 Some(monitor) => set_centered(window, &monitor),
                 None => (),
             };
@@ -25,12 +25,11 @@ pub fn center_window(window: &slint::Window) {
 
 /// Sets the window position to be in the center of the given monitor.
 /// Will do nothing if the window is in fullscreen.
-/// 
+///
 /// ## Platform-specific
-/// 
-/// This only works on Windows and X11.
-/// It's not tested on macOS.
-/// 
+///
+/// This only works on macOS, Windows and X11.
+///
 /// This has no effect on Android, Wayland or iOS.
 fn set_centered(window: &Window, monitor: &MonitorHandle) {
 
