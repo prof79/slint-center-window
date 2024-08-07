@@ -1,5 +1,14 @@
 # Slint Center Window Sample
 
+## Notice
+
+Please note that I have made a crate out of this in the meantime:
+
+* https://github.com/prof79/slint-center-win-crate
+* https://crates.io/crates/slint-center-win
+
+## Summary
+
 This is a quick-and-dirty sample how an application window may be centered using [Slint](https://slint.dev) and Rust when using a `winit` backend.
 
 Neither do I claim that this is pretty nor working in all cases.
